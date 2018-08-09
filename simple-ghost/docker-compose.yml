@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+   yundocs:
+     image: ghost:latest
+     ports:
+        - 2368:2368
+     volumes:
+        - ./data:/var/lib/ghost/content
+     environment:
+        - url=https://ghost.nova.moe
+     restart: always
+
