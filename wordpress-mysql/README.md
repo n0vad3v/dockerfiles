@@ -1,10 +1,16 @@
 Just a simple Wordpress deploy with custom config json file option, Nginx as reverse proxy is needed.
 
+To change the upload file size, Add the following lines in `wordpress/.htaccess`, inside `<IfModule mod_rewrite.c>` and `</IfModule>`.
+
+```
+php_value post_max_size 2004M
+php_value upload_max_filesize 200M
+```
+
 Initiate local 'storage' with:
 
 ```
-mkdir -p db_data/
-mkdir -p wordpress/
+mkdir db_data wordpress
 ```
 
 Nginx on Host configuration example:

@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    restart: always
+    volumes:
+      - ./db_data:/var/lib/mysql
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+      MYSQL_ROOT_PASSWORD: CHANGEME
+      MYSQL_PASSWORD: CHANGEME
+      MYSQL_DATABASE: nextcloud
+      MYSQL_USER: nextcloud
+
+  yuncloud:
+    image: nextcloud
+    ports:
+      - 2403:80
+    links:
+      - db
+    volumes:
+      - ./nextcloud:/var/www/html
+      - ./config:/var/www/html/config
+      - ./data:/var/www/html/data
+    restart: always
