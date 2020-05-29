@@ -1,0 +1,1 @@
+Just a simple MySQL deploy with volumes at the same folder.
