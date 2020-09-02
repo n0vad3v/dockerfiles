@@ -8,7 +8,7 @@ services:
     volumes:
        - ./wordpress:/var/www/html
     ports:
-      - 2400:80
+      - 127.0.0.1:2400:80
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: exampleuser

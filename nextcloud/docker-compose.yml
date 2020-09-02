@@ -17,7 +17,7 @@ services:
   yuncloud:
     image: nextcloud
     ports:
-      - 2403:80
+      - 127.0.0.1:2403:80
     links:
       - db
     volumes:

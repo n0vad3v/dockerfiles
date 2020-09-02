@@ -4,7 +4,7 @@ services:
    yundocs:
      image: ghost:latest
      ports:
-        - 2368:2368
+        - 127.0.0.1:2368:2368
      volumes:
         - ./data:/var/lib/ghost/content
         # If you need custom config, uncomment below
