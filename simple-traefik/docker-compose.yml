@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  traefik-lb:
+    image: traefik:v2.2
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik.toml:/etc/traefik/traefik.toml
+
+networks:
+    default:
+        external:
+            name: traefik-network

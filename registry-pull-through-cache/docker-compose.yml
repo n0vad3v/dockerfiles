@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  registry:
+    restart: always
+    image: registry:2
+    network_mode: host
+    ports:
+      - 127.0.0.1:5000:5000
+    environment:
+      REGISTRY_PROXY_REMOTEURL: https://registry-1.docker.io
+    volumes:
+      - ./registry:/var/lib/registry
