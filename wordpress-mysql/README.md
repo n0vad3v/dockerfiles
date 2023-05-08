@@ -7,12 +7,6 @@ php_value post_max_size 2004M
 php_value upload_max_filesize 200M
 ```
 
-Initiate local 'storage' with:
-
-```
-mkdir db_data wordpress
-```
-
 Nginx on Host configuration example:
 
 ```
